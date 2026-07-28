@@ -16,7 +16,6 @@ internal sealed class SlashCommandModule(KoruxaBossService bossService) : Applic
     {
         await bossService.AttackAsync(Context.User.Id, CancellationToken.None);
         
-        // Pass string directly to your custom extension
         await Context.Interaction.ResponseWithMessageAsync("Time to slap your bosses ass");
     }
 
@@ -25,7 +24,6 @@ internal sealed class SlashCommandModule(KoruxaBossService bossService) : Applic
     {
         await bossService.KillBossAsync(CancellationToken.None);
 
-        // Pass string directly to your custom extension
         await Context.Interaction.ResponseWithMessageAsync("Got it, boss is dead");
     }
 
@@ -51,13 +49,11 @@ internal sealed class SlashCommandModule(KoruxaBossService bossService) : Applic
     [SlashCommand("say", "Send a message as the bot")]
     public async Task SayAsync(string message)
     {
-        // 1. Post the text directly into the text channel
         await Context.Channel.SendMessageAsync(new MessageProperties
         {
             Content = message
         });
 
-        // 2. Secretly confirm to you using string directly
         await Context.Interaction.ResponseWithMessageAsync("Message sent!");
     }
 }
