@@ -10,12 +10,14 @@ using SRC.DiscordBot.Services;
 
 namespace SRC.DiscordBot.Jobs;
 
-internal sealed class BossAttackNotifier(AppDbContext dbContext, RestClient restClient) : IScheduledJob
+internal sealed class BossAttackNotifier(
+    AppDbContext dbContext, 
+    RestClient restClient, 
+    KoruxaBossService bossService) : IScheduledJob
 {
     public async Task ExecuteAsync(CancellationToken cancellationToken)
     {
-        var currentBoss = await dbContext.Boss
-            .SingleOrDefaultAsync(x => !x.KilledAt.HasValue, cancellationToken);
+        var currentBoss = await bossService.GetCurrentBossAsync(cancellationToken);
         
         if (currentBoss is null) return;
         
