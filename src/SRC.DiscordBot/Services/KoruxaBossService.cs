@@ -73,7 +73,7 @@ internal sealed class KoruxaBossService(AppDbContext dbContext)
     {
         var boss = dbContext.Boss
             .AsEnumerable()
-            .SingleOrDefault(x => !x.KilledAt.HasValue && 
+            .FirstOrDefault(x => !x.KilledAt.HasValue && 
                                   x.CreatedAt <= DateTimeOffset.UtcNow);
         
         return Task.FromResult(boss);

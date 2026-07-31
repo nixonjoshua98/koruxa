@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 using System.Threading.Tasks;
+using NetCord;
 using NetCord.Services.ApplicationCommands;
 using SRC.DiscordBot.Components;
 
@@ -53,6 +54,9 @@ internal class BossTimerSlashCommandModule(KoruxaBossService bossService) : Appl
     {
         await Context.Channel.SendMessageAsync(message);
 
-        await Context.Interaction.RespondWithMessageAsync("Message sent!");
+        await Context.Interaction.RespondWithMessageAsync(
+            "Message sent!",
+            flags: MessageFlags.Ephemeral
+        );
     }
 }
