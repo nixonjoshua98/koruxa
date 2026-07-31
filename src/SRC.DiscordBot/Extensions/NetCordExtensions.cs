@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using NetCord;
 using NetCord.Rest;
 
-namespace SRC.DiscordBot;
+namespace SRC.DiscordBot.Extensions;
 
 public static class NetCordExtensions
 {

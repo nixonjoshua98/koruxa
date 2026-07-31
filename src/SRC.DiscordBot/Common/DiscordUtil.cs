@@ -1,6 +1,6 @@
 using System;
 
-namespace SRC.DiscordBot;
+namespace SRC.DiscordBot.Common;
 
 internal static class DiscordUtil
 {

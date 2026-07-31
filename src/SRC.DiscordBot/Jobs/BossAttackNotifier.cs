@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using NetCord.Rest;
 using Nixon.Extensions.Hosting.Jobs;
+using SRC.DiscordBot.Common;
+using SRC.DiscordBot.Services;
 
-namespace SRC.DiscordBot;
+namespace SRC.DiscordBot.Jobs;
 
 internal sealed class BossAttackNotifier(AppDbContext dbContext, RestClient restClient) : IScheduledJob
 {

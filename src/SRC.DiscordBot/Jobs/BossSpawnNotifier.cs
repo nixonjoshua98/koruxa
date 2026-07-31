@@ -1,10 +1,12 @@
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using NetCord.Rest;
 using Nixon.Extensions.Hosting.Jobs;
-using Microsoft.Extensions.Logging;
+using SRC.DiscordBot.Common;
+using SRC.DiscordBot.Services;
 
-namespace SRC.DiscordBot;
+namespace SRC.DiscordBot.Jobs;
 
 internal sealed class BossSpawnNotifier(
     AppDbContext dbContext, 

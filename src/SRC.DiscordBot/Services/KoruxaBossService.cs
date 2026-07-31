@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SRC.DiscordBot.DataModels;
 
-namespace SRC.DiscordBot;
+namespace SRC.DiscordBot.Services;
 
 internal sealed class KoruxaBossService(AppDbContext dbContext)
 {

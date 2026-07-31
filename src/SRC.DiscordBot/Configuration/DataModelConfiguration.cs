@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Nixon.Extensions.EntityFrameworkCore;
 using SRC.DiscordBot.DataModels;
 
-namespace SRC.DiscordBot;
+namespace SRC.DiscordBot.Configuration;
 
 internal sealed class DataModelConfiguration :
     IEntityTypeConfiguration<KoruxaBoss>,

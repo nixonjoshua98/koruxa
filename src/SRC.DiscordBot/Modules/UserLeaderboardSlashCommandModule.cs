@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using NetCord.Services.ApplicationCommands;
 using SRC.DiscordBot.APIClient;
 using SRC.DiscordBot.Common;
+using SRC.DiscordBot.Extensions;
 
 namespace SRC.DiscordBot.Modules;
 

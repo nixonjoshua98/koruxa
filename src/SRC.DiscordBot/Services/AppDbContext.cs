@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using SRC.DiscordBot.DataModels;
 
-namespace SRC.DiscordBot;
+namespace SRC.DiscordBot.Services;
 
 internal sealed class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
 {
