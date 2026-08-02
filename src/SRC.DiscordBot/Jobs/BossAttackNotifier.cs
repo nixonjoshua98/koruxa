@@ -34,10 +34,10 @@ internal sealed class BossAttackNotifier(
             
             await dbContext.SaveChangesAsync(cancellationToken);
             
-            await restClient.SendMessageAsync(
-                KoruxaConstant.KoruxaChannelId,
-                $"Oi {DiscordUtil.MentionUser(user.DiscordUserId)}. Go fight the boss", 
-                cancellationToken: cancellationToken);
+            // await restClient.SendMessageAsync(
+            //     KoruxaConstant.KoruxaChannelId,
+            //     $"Oi {DiscordUtil.MentionUser(user.DiscordUserId)}. Go fight the boss", 
+            //     cancellationToken: cancellationToken);
         }
     }
 }

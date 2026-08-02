@@ -9,7 +9,6 @@ using NetCord.Hosting.Services.ApplicationCommands;
 using NetCord.Hosting.Services.ComponentInteractions;
 using Nixon.Extensions.Hosting.Jobs;
 using Nixon.Extensions.Serilog.AspNetCore;
-using SRC.DiscordBot.APIClient;
 using SRC.DiscordBot.Jobs;
 using SRC.DiscordBot.Modules;
 using SRC.DiscordBot.Services;
@@ -34,7 +33,6 @@ builder.Services.AddDbContextFactory<AppDbContext>(options =>
     options.UseSnakeCaseNamingConvention();
 });
 
-builder.Services.AddKoruxaHttpClient();
 builder.Services.AddApplicationCommands();
 builder.Services.AddComponentInteractions();
 
@@ -45,9 +43,7 @@ builder.Services.TryAddScoped<KoruxaBossService>();
 
 var host = builder.Build();
 
-host.AddApplicationCommandModule<UserLeaderboardSlashCommandModule>();
 host.AddApplicationCommandModule<BossTimerSlashCommandModule>();
-
 host.AddComponentInteractionModule<BossTimerComponentModule>();
 
 using (var scope = host.Services.CreateScope())
